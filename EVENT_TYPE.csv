@@ -1,0 +1,11 @@
+EVENT_ID,EVENT_CATEGORY,DESCRIPTION,EVENT_TYP_ID
+EID01,VENUE,Booking of Venues/ Houses/ Decorator categorized here,VEN
+EID02,PHOTOGRAPHY,Photography related entries,PHO
+EID03,CATERING,All Catering related entries are done here,CAT
+EID04,MAKE-UP,Make-up contract with Make Up Artist,MAK
+EID05,SHOPPING,Shopping done for all the Wedding activities,SHO
+EID06,EVENT MANAGEMENT,Contract with the Event management team,EVE
+EID07,REGISTRY,Information related to the Registry event,REG
+EID08,HONEYMOON,Information related to Honeymoon plans,HON
+EID09,TRAVEL,Information related to various Travels done for wedding,TRA
+EID10,PRIEST,Information related to Priest performing the wedding event,PRI
