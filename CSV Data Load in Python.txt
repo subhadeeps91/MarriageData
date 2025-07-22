@@ -1,0 +1,39 @@
+Steps to Load excel/ CSV to Database using Python Step by Step: All the execution was done using Jupyter Notebook
+
+
+Step 1:/*what to do*/
+
+
+import pandas as pd
+import pyodbc
+
+
+Step 2:
+
+# Load and clean data from the file path (for csv use read_csv, for excel use read_excel)
+df = pd.read_csv(r'C:\Users\Admin\Documents\MarriageData\EVENT_TYPE.csv')
+
+
+
+Step 3:
+
+# Connect to SQL Server (based on user Server, Database Name)
+conn = pyodbc.connect(
+    "DRIVER={ODBC Driver 17 for SQL Server};"
+    "SERVER=LAPTOP-LBBDJG00\\SQLEXPRESS;"  # update as needed
+    "DATABASE=master;"
+    "Trusted_Connection=yes;"
+)
+cursor = conn.cursor()
+
+
+Step 4:
+
+# Insert into table
+for index, row in df.iterrows():
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO EVENT_TYPE (EVENT_ID, EVENT_CATEGORY, DESCRIPTION, EVENT_TYP_ID) VALUES (?, ?, ?, ?)", row.EVENT_ID, row.EVENT_CATEGORY, row.DESCRIPTION, row.EVENT_TYP_ID)
+    conn.commit()
+
+cursor.close()
+conn.close()
